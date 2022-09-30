@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { StatusBar, Pressable } from "react-native";
 import {
   StyleSheet,
@@ -21,13 +21,24 @@ import Animated, {
   withSequence,
   withSpring,
 } from "react-native-reanimated";
+import { AuthContext } from "../../Context/authContext.js";
 
 const Login = () => {
+  
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
+  const [name, setName] = useState(null);
+  
+  const { login } = useContext(AuthContext);
+  ///styling states
+
   const { height, width } = Dimensions.get("window");
   const imagePosition = useSharedValue(1);
   const formPosition = useSharedValue(1);
   const formButtonScale = useSharedValue(1);
   const [isRegistering, setIsRegistering] = useState(false);
+
+  //image animation
 
   const imageAnimatedStyle = useAnimatedStyle(() => {
     const interpulation = interpolate(
@@ -81,7 +92,7 @@ const Login = () => {
 
   const formButtonAnimatedStyle = useAnimatedStyle(() => {
     return {
-      transform: [{ scale: formButtonScale.value }],
+      transform: [{ scale: 1.01 }],
     };
   });
 
@@ -109,7 +120,7 @@ const Login = () => {
           </ClipPath>
           <Image
             style={loginStyles.imgContainer}
-            href={require("../../assets/login2.jpg")}
+            href={require("../../assets/Images/Login.jpg")}
             width={width + 100}
             height={height + 100}
             preserveAspectRatio="xMidyMid slice"
@@ -162,6 +173,8 @@ const Login = () => {
               style={loginStyles.textInput}
               placeholderTextColor="Black"
               placeholder="Full Name"
+              value={name}
+              onChangeText={text => setName(text)}
             />
           )}
 
@@ -169,6 +182,9 @@ const Login = () => {
             style={loginStyles.textInput}
             placeholderTextColor="Black"
             placeholder="Email"
+            value={email}
+            onChangeText={text => setEmail(text)}
+            required
           />
 
           <TouchableOpacity onPress={() => console.log("Pressed")}>
@@ -176,10 +192,16 @@ const Login = () => {
               style={loginStyles.textInput}
               placeholderTextColor="Black"
               placeholder="Password"
+              value={password}
+              onChangeText={text => setPassword(text)}
             />
           </TouchableOpacity>
 
-          <Pressable>
+          <Pressable
+            onPress={() => {
+              login(email, password);
+            }}
+          >
             <Animated.View
               style={[loginStyles.formButton, formButtonAnimatedStyle]}
             >

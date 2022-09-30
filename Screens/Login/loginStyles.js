@@ -1,5 +1,6 @@
 
 import { StyleSheet, Dimensions } from "react-native";
+import {COLORS} from "../../Variables/colors"
 const {width, height} = Dimensions.get('window')
 const loginStyles = StyleSheet.create({
   container: {
@@ -14,12 +15,12 @@ const loginStyles = StyleSheet.create({
     top:-20,
     width:40,
     fontSize:244,
-    backgroundColor:'white',
+    backgroundColor:COLORS.white,
     justifyContent:"center",
     alignItems:"center",
     alignSelf:"center",
     borderRadius:20,
-    shadowColor:"black",
+    shadowColor:COLORS.black,
     shadowOffset:{
       width:0,
       height:-3,
@@ -41,16 +42,16 @@ const loginStyles = StyleSheet.create({
   textInput: {
     height:50,
     borderWidth:1,
-    borderColor:"black",
+    borderColor:COLORS.black,
     marginHorizontal:20,
     marginVertical:10,
     borderRadius:10,
     paddingLeft:15,
-    backgroundColor: "white",
+    backgroundColor: COLORS.white,
     justifyContent:"flex-end"
   },
   formButton: {
-    backgroundColor: "white",
+    backgroundColor: COLORS.white,
     height: 35,
     // width:200,
     alignItems: "center",
@@ -60,8 +61,8 @@ const loginStyles = StyleSheet.create({
     marginBottom: 10,
     marginTop:10,
     borderWidth:1,
-    borderColor: "black",
-    shadowColor:"black",
+    borderColor:COLORS.black,
+    shadowColor:COLORS.black,
     shadowOffset:{
       width:0,
       height:7,
@@ -77,7 +78,7 @@ const loginStyles = StyleSheet.create({
     height: height/3,
   },
   loginButton: {
-    backgroundColor: "white",
+    backgroundColor: COLORS.white,
     height: 55,
     alignItems: "center",
     justifyContent: "center",
@@ -85,8 +86,8 @@ const loginStyles = StyleSheet.create({
     marginHorizontal: 20,
     marginBottom: 15,
     borderWidth:1,
-    borderColor: "black",
-    shadowColor:"black",
+    borderColor: COLORS.black,
+    shadowColor:COLORS.black,
     shadowOffset:{
       width:0,
       height:4,
@@ -97,7 +98,7 @@ const loginStyles = StyleSheet.create({
     elevation:5
   },
   registerButton: {
-    backgroundColor: "white",
+    backgroundColor: COLORS.white,
     height: 55,
     alignItems: "center",
     justifyContent: "center",
@@ -105,8 +106,8 @@ const loginStyles = StyleSheet.create({
     marginHorizontal: 20,
     marginBottom: 10,
     borderWidth:1,
-    borderColor: "black",
-    shadowColor:"black",
+    borderColor: COLORS.black,
+    shadowColor:COLORS.black,
     shadowOffset:{
       width:0,
       height:4,
@@ -117,7 +118,7 @@ const loginStyles = StyleSheet.create({
     elevation:5
   },
   buttonText: {
-    color: "black",
+    color: COLORS.black,
     fontSize: "17",
     fontWeight: "600",
     letterSpacing: "1",
