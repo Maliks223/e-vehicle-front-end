@@ -6,11 +6,12 @@ import settingsStyles from "./settings.Style";
 const Setting = (children) => {
   const { logout } = useContext(AuthContext);
   const { userInfo } = useContext(AuthContext);
+  console.log("🚀 ~ file: settings.js ~ line 9 ~ Setting ~ userInfo", userInfo)
 
   return (
     <View style={settingsStyles.container}>
       <View style={settingsStyles.nameContainer}>
-        <Text style={settingsStyles.name}>Hello User </Text>
+        <Text style={settingsStyles.name}>Hello ... </Text>
       </View>
       <View style={settingsStyles.buttonContainer}>
         <Pressable

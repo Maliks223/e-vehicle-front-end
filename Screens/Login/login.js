@@ -147,7 +147,7 @@ const Login = () => {
       <View style={loginStyles.buttonContainer}>
         <Animated.View style={buttonAnimatedStyle}>
           <Pressable style={loginStyles.loginButton} onPress={loginHandler}>
-            <Text style={loginStyles.buttonText}>LOG IN</Text>
+            <Text style={loginStyles.buttonTextL}>LOG IN</Text>
           </Pressable>
         </Animated.View>
 
@@ -156,7 +156,7 @@ const Login = () => {
             style={loginStyles.registerButton}
             onPress={registerHandler}
           >
-            <Text style={loginStyles.buttonText}>REGISTER</Text>
+            <Text style={loginStyles.buttonTextL}>REGISTER</Text>
           </Pressable>
         </Animated.View>
       </View>
@@ -172,7 +172,7 @@ const Login = () => {
             <TextInput
               style={loginStyles.textInput}
               placeholderTextColor="Black"
-              placeholder="Full Name"
+              placeholder="User Name"
               value={name}
               onChangeText={text => setName(text)}
             />

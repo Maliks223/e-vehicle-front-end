@@ -51,7 +51,7 @@ const loginStyles = StyleSheet.create({
     justifyContent:"flex-end"
   },
   formButton: {
-    backgroundColor: COLORS.white,
+    backgroundColor: COLORS.blue,
     height: 35,
     // width:200,
     alignItems: "center",
@@ -60,12 +60,10 @@ const loginStyles = StyleSheet.create({
     marginHorizontal: 20,
     marginBottom: 10,
     marginTop:10,
-    borderWidth:1,
-    borderColor:COLORS.black,
     shadowColor:COLORS.black,
     shadowOffset:{
       width:0,
-      height:3,
+      height:1,
 
     },
     shadowOpacity:0.25,
@@ -78,7 +76,7 @@ const loginStyles = StyleSheet.create({
     height: height/3,
   },
   loginButton: {
-    backgroundColor: COLORS.white,
+    backgroundColor: "white",
     height: 55,
     alignItems: "center",
     justifyContent: "center",
@@ -98,7 +96,7 @@ const loginStyles = StyleSheet.create({
     elevation:5
   },
   registerButton: {
-    backgroundColor: COLORS.white,
+    backgroundColor: "white",
     height: 55,
     alignItems: "center",
     justifyContent: "center",
@@ -118,11 +116,17 @@ const loginStyles = StyleSheet.create({
     elevation:5
   },
   buttonText: {
-    color: COLORS.black,
+    color:"white",
     fontSize: "17",
     fontWeight: "600",
     letterSpacing: "1",
   },
+  buttonTextL:{
+    color:"black",
+    fontSize: "17",
+    fontWeight: "600",
+    letterSpacing: "1",
+  }
 });
 
 export default loginStyles;

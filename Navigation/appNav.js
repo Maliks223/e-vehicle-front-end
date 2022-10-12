@@ -8,7 +8,7 @@ import { AuthContext } from "../Context/authContext.js";
 
 
 const AppNav = () => {
-  // const { isLoading, userToken } = useContext(AuthContext);
+  const { isLoading, userToken } = useContext(AuthContext);
   // if (isLoading) {
   //   <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
   //     <ActivityIndicator  />
