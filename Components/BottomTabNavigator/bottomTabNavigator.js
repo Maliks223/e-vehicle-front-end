@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import CreatePost from "../../Screens/CreatePost/createPost.js";
@@ -7,9 +7,11 @@ import Login from "../../Screens/Login/login.js";
 import Settings from "../../Screens/Settings/settings.js";
 import { COLORS } from "../../Variables/colors";
 
+
 const Tab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
+
   return (
     <Tab.Navigator
       screenOptions={{
@@ -31,7 +33,9 @@ const BottomTabNavigator = () => {
     >
       <Tab.Screen
         name="Home"
+  
         component={Home}
+        test="test"
         options={{
           tabBarIcon: ({ focused }) => (
             <View

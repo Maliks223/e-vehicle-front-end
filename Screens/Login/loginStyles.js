@@ -65,7 +65,7 @@ const loginStyles = StyleSheet.create({
     shadowColor:COLORS.black,
     shadowOffset:{
       width:0,
-      height:7,
+      height:3,
 
     },
     shadowOpacity:0.25,

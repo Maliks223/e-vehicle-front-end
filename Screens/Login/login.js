@@ -194,6 +194,7 @@ const Login = () => {
               placeholder="Password"
               value={password}
               onChangeText={text => setPassword(text)}
+               
             />
           </TouchableOpacity>
 

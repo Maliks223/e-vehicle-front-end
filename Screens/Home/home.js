@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   Text,
@@ -8,27 +8,47 @@ import {
 } from "react-native";
 import Post from "../../Components/Post/post";
 import SearchBar from "../../Components/SearchBar/searchBar";
+import { BASE_URL } from "../../Variables/config";
 
-const Home = () => {
+const Home = (props) => {
+
+  const [posts, setPosts] = useState([]);
+  const [allPosts, setAllPosts] = useState([]);
+
+  const getPosts = async (posts) => {
+    try {
+      let result = await fetch(`${BASE_URL}post/all`, {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }) 
+      // console.log("🚀 ~ file: home.js ~ line 23 ~ getPosts ~ result", result)
+      let response = await result.json()
+      setPosts(response);
+      setAllPosts(response)
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+
+  useEffect(()=> {
+    getPosts()
+  }, [] )
+
   return (
     <SafeAreaView style={styles.container}>
+            <StatusBar barStyle="dark-content" backgroundColor="#ecf0f1" />
+
+          <SearchBar allPosts={allPosts} setPosts={setPosts}/>
       <ScrollView style={styles.scrollView}>
         <ScrollView>
-          <SearchBar/>
         </ScrollView>
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
+        {posts.map((post, index) => {
+          return (
+            <Post key={index} data={post} index={index} />
+          )
+        })}
       </ScrollView>
     </SafeAreaView>
   );

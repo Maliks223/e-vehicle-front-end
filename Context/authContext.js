@@ -1,5 +1,4 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import axios from "axios";
 import React, { createContext, useState, useEffect } from "react";
 import { BASE_URL } from "../Variables/config";
 
@@ -9,10 +8,6 @@ export const AuthProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [userToken, setUserToken] = useState(null);
   const [userInfo, setUserInfo] = useState(null);
-
-  const [generalError, setGeneralError] = useState("");
-  const [emailError, setEmailError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
 
   const login = async (email, password) => {
     let item = { email, password };

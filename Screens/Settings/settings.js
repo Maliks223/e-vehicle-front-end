@@ -7,12 +7,10 @@ const Setting = (children) => {
   const { logout } = useContext(AuthContext);
   const { userInfo } = useContext(AuthContext);
 
-  console.log("batata", userInfo);
-
   return (
     <View style={settingsStyles.container}>
       <View style={settingsStyles.nameContainer}>
-        <Text style={settingsStyles.name} >Hello Batata </Text>
+        <Text style={settingsStyles.name}>Hello User </Text>
       </View>
       <View style={settingsStyles.buttonContainer}>
         <Pressable
@@ -25,9 +23,13 @@ const Setting = (children) => {
         </Pressable>
 
         {/* to be changes to name weh fetching register */}
-      </View>
-      <View style={settingsStyles.copyRightsContainer}>
-        <Text>Copyright © batata</Text>
+        <View style={settingsStyles.copyRightsContainer}>
+          <Text style={settingsStyles.copyRightsText}>
+            <Text>Copyright </Text>
+            {new Date().getFullYear()}
+            <Text> ©</Text>
+          </Text>
+        </View>
       </View>
     </View>
   );

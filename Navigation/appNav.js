@@ -8,16 +8,17 @@ import { AuthContext } from "../Context/authContext.js";
 
 
 const AppNav = () => {
-  const { isLoading, userToken } = useContext(AuthContext);
-  if (isLoading) {
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <ActivityIndicator  />
-    </View>;
-  }
+  // const { isLoading, userToken } = useContext(AuthContext);
+  // if (isLoading) {
+  //   <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+  //     <ActivityIndicator  />
+  //   </View>;
+  // }
 
   return (
     <NavigationContainer>
       <BottomTabNavigator/>
+      {/* <Login/> */}
       {/* {userToken !== null ? <BottomTabNavigator/> : <Login />} */}
     </NavigationContainer>
   );

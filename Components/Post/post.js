@@ -1,27 +1,39 @@
 import React, { useState } from "react";
 import PostStyles from "./postStyles.js";
 import { Text, View, SafeAreaView, Image, Pressable } from "react-native";
+import { BASE_URL } from "../../Variables/config.js";
 
-const Post = () => {
+const Post = ({data, index}) => {
+  const category = data.categories[0];
+  const description = data.desc;
+  const image = data.img;
+  const title = data.title;
+  const author = data.author;
+
   return (
     <SafeAreaView style={PostStyles.container}>
       <View style={PostStyles.postWrapper}>
-        <Text style={PostStyles.author}> I am the author </Text>
-        <Text style={PostStyles.title}> I am the title </Text>
-
+        <View style={PostStyles.postUpper}>
+        <Text style={PostStyles.author}>{author}</Text>
+          <View>
+            <Text style={PostStyles.category}>{category}</Text>
+          </View>
+        </View>
+          <View>
+            <Text style={PostStyles.title}>{title}</Text>
+          </View>
         <Text style={PostStyles.desc}>
-          {" "}
-          I am the description Lorem ipsum, dolor sit amet consectetur
-          adipisicing elit. In totam, animi praesentium facere natus culpa
-          ratione consequatur ut ducimus accusamus.{" "}
+          {description}
         </Text>
-        <Pressable></Pressable>
+
+        {/* <Pressable></Pressable> */}
 
         <Image
           style={PostStyles.img}
           resizeMode="cover"
-          source={require("../../assets/Icons/logo2.png")}
+          source={{uri: `${BASE_URL}public/${image}`}}
         />
+
       </View>
     </SafeAreaView>
   );

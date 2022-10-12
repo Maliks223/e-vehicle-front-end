@@ -23,8 +23,17 @@ const PostStyles = StyleSheet.create({
     fontSize: 20,
     color: COLORS.blue,
   },
-  title: { marginBottom: 5, fontWeight: "500", fontSize: 18 },
-  desc: { marginBottom: 5, fontWeight: "300", fontSize: 16 },
+  postUpper:{
+    display:"flex",
+    flexDirection:"row",
+    justifyContent:"space-between",
+    marginTop:10,
+    marginLeft:10,
+    marginRight:10,
+  },
+  title: { marginBottom: 5, fontWeight: "500", fontSize: 18, },
+  category:{ marginBottom: 5, fontWeight: "400", fontSize: 15 },
+  desc: { marginBottom: 5, fontWeight: "300", fontSize: 16, marginLeft:5 },
  
   img: {
     marginTop: 15,
