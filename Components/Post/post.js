@@ -55,4 +55,5 @@ const Post = ({ data, index }) => {
   );
 };
 
+
 export default Post;
