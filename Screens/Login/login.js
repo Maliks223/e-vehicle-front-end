@@ -83,10 +83,6 @@ const Login = () => {
       transform: [
         { translateY: withTiming(interpulation, { duration: 1000 }) },
       ],
-      // opacity:
-      //   imagePosition.value === 0
-      //     ? withDelay(400, withTiming(1, { duration: 800 }))
-      //     : withTiming(0, { duration: 300 }),
     };
   });
 

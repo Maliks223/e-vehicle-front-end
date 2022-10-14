@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, SafeAreaView, ScrollView, StatusBar } from "react-native";
+import { StyleSheet, SafeAreaView, ScrollView, StatusBar, Text } from "react-native";
 import Post from "../../Components/Post/post";
 import SearchBar from "../../Components/SearchBar/searchBar";
 import { BASE_URL } from "../../Variables/config";
@@ -34,9 +34,7 @@ const Home = (props) => {
       <StatusBar barStyle="dark-content" backgroundColor="#ecf0f1" />
 
       <SearchBar allPosts={allPosts} setPosts={setPosts} />
-      <ScrollView style={styles.scrollView}>
-        {/* <ScrollView>
-        </ScrollView> */}
+      <ScrollView style={styles.scrollView} keyboardDismissMode='on-drag'>
         {posts.map((post, index) => {
           return <Post key={index} data={post} index={index} />;
         })}

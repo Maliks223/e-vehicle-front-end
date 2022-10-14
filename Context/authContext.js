@@ -8,6 +8,7 @@ export const AuthProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [userToken, setUserToken] = useState(null);
   const [userInfo, setUserInfo] = useState(null);
+  // console.log("🚀 ~ file: authContext.js ~ line 11 ~ AuthProvider ~ userInfo", userInfo)
 
   const login = async (email, password) => {
     let item = { email, password };
@@ -24,6 +25,7 @@ export const AuthProvider = ({ children }) => {
       await AsyncStorage.setItem("userInfo", JSON.stringify(userInfo));
       await AsyncStorage.setItem("userToken", response.token);
       setUserInfo(response);
+      console.log("🚀 ~ file: authContext.js ~ line 27 ~ login ~ setUserInfo", setUserInfo)
       setUserToken(response.token);
       setIsLoading(false);
       console.log(userInfo);
@@ -34,9 +36,9 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async () => {
     setIsLoading(true);
-    setUserToken(null);
     await AsyncStorage.removeItem("userToken");
     await AsyncStorage.removeItem("userInfo");
+    setUserToken(null);
     setIsLoading(false);
   };
 

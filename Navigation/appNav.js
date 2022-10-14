@@ -17,7 +17,7 @@ const AppNav = () => {
 
   return (
     <NavigationContainer>
-      <BottomTabNavigator/>
+       <BottomTabNavigator/>
       {/* <Login/> */}
       {/* {userToken !== null ? <BottomTabNavigator/> : <Login />} */}
     </NavigationContainer>
