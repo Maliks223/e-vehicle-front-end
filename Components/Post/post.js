@@ -14,6 +14,7 @@ import {
 import { BASE_URL } from "../../Variables/config.js";
 
 const Post = ({ data, index }) => {
+  console.log("🚀 ~ file: post.js ~ line 17 ~ Post ~ data", data);
   const category = data.categories[0];
   const description = data.desc;
   const image = data.img;
@@ -56,6 +57,7 @@ const Post = ({ data, index }) => {
           </Pressable>
         </KeyboardAvoidingView>
         <Modal
+          presentationStyle="pageSheet"
           animationType="slide"
           visible={modalVisible}
           onRequestClose={() => setModalVisible(false)}
@@ -68,7 +70,6 @@ const Post = ({ data, index }) => {
                 onPress={() => setModalVisible(false)}
               >
                 <Text style={PostStyles.upperModalCloseButtonText}>
-                  {" "}
                   <Image
                     source={require("../../assets/Icons/cancel2.png")}
                     resizeMode="contain"
@@ -87,11 +88,11 @@ const Post = ({ data, index }) => {
                 <View>
                   <Text style={PostStyles.modalCommentText}>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Consequatur, nisi!
+                    Tenetur voluptatum delectus 
                   </Text>
                 </View>
                 <View style={PostStyles.lowerComment}>
-                  <Text style={PostStyles.modalCommentVote}>30 votes</Text>
+                  <Text style={PostStyles.modalCommentVote}> votes</Text>
                   <Pressable>
                     <Text style={PostStyles.modalCommentVoteButton}>
                       <Image

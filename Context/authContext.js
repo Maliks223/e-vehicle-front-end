@@ -1,13 +1,14 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { createContext, useState, useEffect } from "react";
 import { BASE_URL } from "../Variables/config";
+import * as SecureStore from "expo-secure-store"
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
-  const [userToken, setUserToken] = useState(null);
-  const [userInfo, setUserInfo] = useState(null);
+  const [userToken, setUserToken] = useState("");
+  const [userInfo, setUserInfo] = useState("");
   // console.log("🚀 ~ file: authContext.js ~ line 11 ~ AuthProvider ~ userInfo", userInfo)
 
   const login = async (email, password) => {
@@ -22,7 +23,8 @@ export const AuthProvider = ({ children }) => {
         body: JSON.stringify(item),
       });
       let response = await result.json();
-      await AsyncStorage.setItem("userInfo", JSON.stringify(userInfo));
+      console.log("🚀 ~ file: authContext.js ~ line 26 ~ login ~ response", response)
+      await AsyncStorage.setItem("userInfo", JSON.stringify(response));
       await AsyncStorage.setItem("userToken", response.token);
       setUserInfo(response);
       console.log("🚀 ~ file: authContext.js ~ line 27 ~ login ~ setUserInfo", setUserInfo)

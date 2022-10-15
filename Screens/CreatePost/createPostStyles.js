@@ -10,6 +10,13 @@ const createPostStyles = StyleSheet.create({
     backgroundColor: COLORS.white,
     height:"100%"
   },
+  loadingContainer:{
+    height:"100%",
+    display:"flex",
+    justifyContent:"center",
+    alignItems:"center",
+    paddingBottom:200
+  },
   textInput: {
     width: "90%",
     height: 50,
@@ -36,8 +43,8 @@ const createPostStyles = StyleSheet.create({
   },
   uploadImg: {
     backgroundColor: "white",
-    height: 35,
-    width: "30%",
+    height: 45,
+    width: "35%",
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 5,
@@ -52,8 +59,8 @@ const createPostStyles = StyleSheet.create({
     marginRight: 20,
     marginTop: 10,
     borderRadius: 10,
-    height: 35,
-    width: "20%",
+    height: 40,
+    width: "25%",
     backgroundColor: COLORS.blue,
     display: "flex",
     justifyContent: "center",

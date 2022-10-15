@@ -98,7 +98,7 @@ const PostStyles = StyleSheet.create({
     fontWeight:"500"
   },
   modalCommentVoteButton:{
-    color:COLORS.blue
+    color:COLORS.blue,
 
   },
   postWrapper: {
@@ -114,11 +114,10 @@ const PostStyles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: COLORS.blue,
     width: "27%",
-    height: "40%",
+    height: "60%",
     borderRadius: 30,
   },
   author: {
-    // marginBottom: 10,
     fontWeight: "700",
     fontSize: 20,
     color: COLORS.blue,
