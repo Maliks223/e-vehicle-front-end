@@ -21,14 +21,13 @@ const PostStyles = StyleSheet.create({
   },
   upperModal: {
     display: "flex",
-    justifyContent:"center",
+    justifyContent: "center",
     height: "10%",
     width: "100%",
-    
   },
-  upperModalTitle:{
-    fontSize:20,
-    fontWeight:"600",
+  upperModalTitle: {
+    fontSize: 20,
+    fontWeight: "600",
     alignSelf: "center",
   },
   upperModalCloseButton: {
@@ -36,29 +35,17 @@ const PostStyles = StyleSheet.create({
     height: "48%",
     justifyContent: "center",
     alignSelf: "flex-end",
-    borderRadius: 20,
-    shadowColor: "black",
-    shadowOffset: {
-      width: 0,
-      height: 3,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 7,
-
     marginRight: 20,
-    // marginTop: 20,
   },
   upperModalCloseButtonText: {
-    // justifyContent: "center",
-    // alignSelf: "center",
-    // fontSize: 25,
+  
   },
   lowerModal: {
     padding: 20,
     // backgroundColor: "blue",
     width: "100%",
-    height: "94%",shadowColor: "black",
+    height: "94%",
+    shadowColor: "black",
     shadowOffset: {
       width: 0,
       height: 1,
@@ -68,38 +55,37 @@ const PostStyles = StyleSheet.create({
     elevation: 7,
   },
   modalComment: {
-    display:"flex",
-    flexDirection:"column",
-    justifyContent:"space-between",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
     marginTop: 5,
     marginBottom: 5,
     padding: 7,
     minheight: "20%",
-    borderRadius:3,
+    borderRadius: 3,
     width: "90%",
     backgroundColor: COLORS.grey,
     // backgroundColor:COLORS.blue
   },
-  lowerComment:{
-    display:"flex",
-    flexDirection:"row",
-    justifyContent:"space-between"
+  lowerComment: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   modalCommentText: {
     fontSize: 17,
-    marginBottom:15,
-    fontWeight:"300"
+    marginBottom: 15,
+    fontWeight: "300",
     // color:COLORS.white
   },
   modalCommentVote: {
     // color:COLORS.white,
-    marginTop:5,
+    marginTop: 5,
     fontSize: 14,
-    fontWeight:"500"
+    fontWeight: "500",
   },
-  modalCommentVoteButton:{
-    color:COLORS.blue,
-
+  modalCommentVoteButton: {
+    color: COLORS.blue,
   },
   postWrapper: {
     backgroundColor: COLORS.white,
@@ -123,7 +109,7 @@ const PostStyles = StyleSheet.create({
     color: COLORS.blue,
   },
   postUpper: {
-    height:"10%",
+    height: "10%",
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
@@ -160,7 +146,6 @@ const PostStyles = StyleSheet.create({
     borderRadius: 5,
     paddingLeft: 10,
     borderColor: "black",
-    // height:"100%",
     // backgroundColor:"yellow"
   },
   commentButton: {

@@ -1,24 +1,15 @@
-import { View, Text } from "react-native";
 import React, { useContext } from "react";
 import Login from "../Screens/Login/login";
 import BottomTabNavigator from "../Components/BottomTabNavigator/bottomTabNavigator.js";
 import { NavigationContainer } from "@react-navigation/native";
 import { AuthContext } from "../Context/authContext.js";
 
-
-
 const AppNav = () => {
-  const { isLoading, userToken } = useContext(AuthContext);
-  // if (isLoading) {
-  //     <ActivityIndicator  />
-  //   </View>;
-  // }
+  const { userToken } = useContext(AuthContext);
 
   return (
     <NavigationContainer>
-       {/* <BottomTabNavigator/> */}
-      {/* <Login/> */}
-      {userToken !== null ? <BottomTabNavigator/> : <Login />}
+      {!userToken  ? <Login /> : <BottomTabNavigator/>  }
     </NavigationContainer>
   );
 };

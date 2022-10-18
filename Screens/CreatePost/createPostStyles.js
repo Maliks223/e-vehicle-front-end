@@ -7,20 +7,28 @@ const createPostStyles = StyleSheet.create({
     display: "flex",
     alignItems: "center",
     width: "100%",
-    backgroundColor: COLORS.white,
-    height:"100%"
+    // backgroundColor: COLORS.white,
+    height: "100%",
   },
-  loadingContainer:{
-    height:"100%",
-    display:"flex",
-    justifyContent:"center",
-    alignItems:"center",
-    paddingBottom:200
+  loadingContainer: {
+    height: "100%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingBottom: 200,
   },
   textInput: {
     width: "90%",
     height: 50,
-    borderWidth: 0.4,
+    // borderWidth: 0.3,
+    shadowColor: COLORS.black,
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 3.84,
+    elevation: 5,
     borderColor: "black",
     marginHorizontal: 20,
     marginVertical: 10,
@@ -30,13 +38,25 @@ const createPostStyles = StyleSheet.create({
     justifyContent: "flex-end",
   },
   textInputDesc: {
-    width: "90%",
-    height: 100,
-    borderWidth: 0.4,
-    borderColor: "black",
+    shadowColor: COLORS.black,
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 3.84,
+    elevation: 5,
+
     marginHorizontal: 20,
     marginVertical: 10,
     borderRadius: 5,
+    paddingLeft: 15,
+    width: "90%",
+    height: 100,
+    marginHorizontal: 20,
+    marginVertical: 10,
+    borderRadius: 5,
+    paddingTop: 15,
     paddingLeft: 15,
     backgroundColor: "white",
     justifyContent: "flex-end",
@@ -49,9 +69,18 @@ const createPostStyles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 5,
     marginTop: 10,
-    borderWidth: .4,
-    borderColor: "black",
-   
+    shadowColor: COLORS.black,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.15,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  helperText: {
+    color: "red",
+    letterSpacing:1
   },
   postButton: {
     alignSelf: "flex-end",
@@ -65,18 +94,18 @@ const createPostStyles = StyleSheet.create({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    borderWidth: 0.4,
-    borderColor: COLORS.black,
+    // borderWidth: 0.4,
+    // borderColor: COLORS.black,
     shadowColor: COLORS.black,
     shadowOffset: {
       width: 0,
       height: 4,
     },
-    shadowOpacity: 0.25,
+    shadowOpacity: 0.2,
     shadowRadius: 3.84,
     elevation: 5,
   },
-  
+
   postButtonText: {
     color: "white",
     fontSize: 17,

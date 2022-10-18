@@ -11,6 +11,7 @@ import {
 import Post from "../../Components/Post/post";
 import SearchBar from "../../Components/SearchBar/searchBar";
 import { BASE_URL } from "../../Variables/config";
+import { BarIndicator } from "react-native-indicators";
 
 const Home = (props) => {
   const [posts, setPosts] = useState([]);
@@ -29,7 +30,8 @@ const Home = (props) => {
       setPosts(response);
       setAllPosts(response);
     } catch (error) {
-      console.log(error.message);
+      console.log("🚀 ~ file: home.js ~ line 33 ~ getPosts ~ error", error)
+      
     }
   };
 
@@ -37,7 +39,7 @@ const Home = (props) => {
     getPosts();
     setTimeout(() => {
       setLoading(false);
-    }, 1500);
+    }, 3000);
   }, []);
 
   return (
@@ -46,7 +48,7 @@ const Home = (props) => {
       <SearchBar allPosts={allPosts} setPosts={setPosts} />
       <ScrollView style={styles.scrollView} keyboardDismissMode="on-drag">
         {loading ? (
-          <ActivityIndicator style={styles.loading} color="#0C46CE" />
+          <BarIndicator count={5} size={30} style={styles.loading} color="#0C46CE" />
         ) : (
           posts.map((post, index) => {
             return <Post key={index} data={post} index={index} />;

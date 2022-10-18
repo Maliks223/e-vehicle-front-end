@@ -22,13 +22,13 @@ import Animated, {
   withSpring,
 } from "react-native-reanimated";
 import { AuthContext } from "../../Context/authContext.js";
+// import { HelperText, TextInput } from "react-native-paper";
 
 const Login = () => {
-  
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [name, setName] = useState(null);
-  
+
   const { login } = useContext(AuthContext);
   ///styling states
 
@@ -170,7 +170,7 @@ const Login = () => {
               placeholderTextColor="Black"
               placeholder="User Name"
               value={name}
-              onChangeText={text => setName(text)}
+              onChangeText={(text) => setName(text)}
             />
           )}
 
@@ -179,33 +179,33 @@ const Login = () => {
             placeholderTextColor="Black"
             placeholder="Email"
             value={email}
-            onChangeText={text => setEmail(text)}
+            onChangeText={(text) => setEmail(text)}
             required
           />
 
-          <TouchableOpacity onPress={() => console.log("Pressed")}>
-            <TextInput
-              style={loginStyles.textInput}
-              placeholderTextColor="Black"
-              placeholder="Password"
-              value={password}
-              onChangeText={text => setPassword(text)}
-            />
-          </TouchableOpacity>
+          <TextInput
+            style={loginStyles.textInput}
+            placeholderTextColor="Black"
+            placeholder="Password"
+            value={password}
+            onChangeText={(text) => setPassword(text)}
+          />
 
-          <Pressable
-            onPress={() => {
-              login(email, password);
-            }}
-          >
-            <Animated.View
-              style={[loginStyles.formButton, formButtonAnimatedStyle]}
+          {/* <TouchableOpacity> */}
+            <Pressable
+              onPress={() => {
+                login(email, password);
+              }}
             >
-              <Text style={loginStyles.buttonText}>
-                {isRegistering ? "REGISTER" : "LOGIN"}
-              </Text>
-            </Animated.View>
-          </Pressable>
+              <Animated.View
+                style={[loginStyles.formButton, formButtonAnimatedStyle]}
+              >
+                <Text style={loginStyles.buttonText}>
+                  {isRegistering ? "REGISTER" : "LOGIN"}
+                </Text>
+              </Animated.View>
+            </Pressable>
+          {/* </TouchableOpacity> */}
         </KeyboardAvoidingView>
       </Animated.View>
     </View>

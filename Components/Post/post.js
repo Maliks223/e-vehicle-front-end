@@ -12,15 +12,16 @@ import {
   ScrollView,
 } from "react-native";
 import { BASE_URL } from "../../Variables/config.js";
+import { TouchableRipple } from "react-native-paper";
 
 const Post = ({ data, index }) => {
-  console.log("🚀 ~ file: post.js ~ line 17 ~ Post ~ data", data);
   const category = data.categories[0];
   const description = data.desc;
   const image = data.img;
   const title = data.title;
   const author = data.author;
   const [modalVisible, setModalVisible] = useState(false);
+  const [ comment, setComment] = useState()
 
   return (
     <SafeAreaView style={PostStyles.container}>
@@ -42,11 +43,12 @@ const Post = ({ data, index }) => {
         />
         <KeyboardAvoidingView style={PostStyles.commentsWrapper}>
           <TextInput
+            value={comment}
             style={PostStyles.textInput}
-            placeholderTextColor="Black"
+            placeholderTextColor="grey"
             placeholder="Write a comment..."
           />
-          <Pressable style={PostStyles.commentButton}>
+          <Pressable onPress={()=> {setComment("")}} style={PostStyles.commentButton}>
             <Text style={PostStyles.commentButtonText}>comment</Text>
           </Pressable>
           <Pressable
@@ -71,7 +73,7 @@ const Post = ({ data, index }) => {
               >
                 <Text style={PostStyles.upperModalCloseButtonText}>
                   <Image
-                    source={require("../../assets/Icons/cancel2.png")}
+                    source={require("../../assets/Icons/cancel.png")}
                     resizeMode="contain"
                     style={{
                       width: 25,
@@ -87,12 +89,12 @@ const Post = ({ data, index }) => {
               <View style={PostStyles.modalComment}>
                 <View>
                   <Text style={PostStyles.modalCommentText}>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Tenetur voluptatum delectus 
+                    You need to check the pipes, and make sure they fit
+                    perfectly
                   </Text>
                 </View>
                 <View style={PostStyles.lowerComment}>
-                  <Text style={PostStyles.modalCommentVote}> votes</Text>
+                  <Text style={PostStyles.modalCommentVote}> 3 votes</Text>
                   <Pressable>
                     <Text style={PostStyles.modalCommentVoteButton}>
                       <Image
